@@ -1,0 +1,13 @@
+{
+   "manifest_version": 3,
+   "version": "1.0",
+   "name": "Price Comparison",
+   "action": {
+      "default_popup": "./index.html",
+      "default_icon": "./image/icon.png"
+   },
+   "permissions": ["tabs"],
+   "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self';"
+   }
+}

@@ -1,66 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
-    
-</head>
-<body class="max-w-lg border-2 border-red-500 mx-5 text-center p-3 m-3">
-    <div class="container mx-auto px-30">
-        <div class="grid grid-cols-2">
-            <div class="w-40">
-                <img class="rounded-lg border-2 border-orange-200" src="https://picsum.photos/200" alt="random image" id="productImage">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Document</title>
+      <link rel="stylesheet" href="output.css" />
+   </head>
+   <body
+      class="border-2 border-red-500 mx-5 text-center p-3 m-3 rounded-md"
+      style="width: 500px"
+   >
+      <div
+         id="loading"
+         style="display: flex; height: 450px"
+         class="justify-center flex-col"
+      >
+         <img
+            src="image/loading.gif"
+            alt="loading..."
+            class="mx-auto mb-3"
+            width="200px"
+         />
+         <p>Loading...</p>
+      </div>
+      <div id="body" class="mx-auto" style="display: none">
+         <div class="flex flex-row justify-between">
+            <div class="w-40 h-40 overflow-hidden">
+               <img
+                  class="rounded-lg border-2 border-orange-200 object-contain w-full h-full"
+                  src="https://picsum.photos/200"
+                  alt="random image"
+                  id="productImage"
+               />
             </div>
-            <div class="grid rounded-md content-center justify-center bg-orange-50">
-                <p class="text-2xl" id="productName">Product Name</p>
+            <div
+               class="flex rounded-md bg-orange-50 w-72 p-3 items-center justify-center"
+            >
+               <p class="text-2xl" id="productName">Product Name 1</p>
             </div>
-        </div>
-        <div class="grid grid-rows-3 grid-flow-col mt-5 gap-y-3 bg-orange-50 rounded-md p-3">
+         </div>
+         <div
+            class="grid grid-rows-3 grid-flow-col mt-5 gap-y-3 bg-orange-50 rounded-md p-3"
+         >
             <div class="grid grid-cols-9 bg-orange-100 rounded-lg gap-x-3 p-3">
-                <div class="grid justify-center content-center bg-orange-100 rounded-md"><img src="image/flipkart.png" alt="amazon" width="50px"></div>
-                
-                <div class="grid content-center col-span-4">
-                    <select class="bg-white border-2 border-orange-300 rounded-md outline-none h-7 px-2" name="Product" id="productList1">
-                        <option value="volvo">volvo</option>
-                        <option value="saab">saab</option>
-                        <option value="mercedes">mercedes</option>
-                    </select>
-                </div>
-                <div class="grid text-2xl sm:text-3xl truncate font-semibold content-center col-span-2 bg-orange-100 rounded-md"><p class="bg-gradient-to-r from-orange-400 to-red-600 bg-clip-text text-transparent" id="productPrice1">150000</p></div>
-                <div class="grid justify-center col-span-2"><button class="bg-orange-400 text-white px-2 py-1 text-base font-semibold rounded-sm hover:bg-orange-500 active:bg-red-500"><a href="#">Visit Store</a></button></div>
+               <div
+                  class="grid justify-center content-center bg-orange-100 rounded-md"
+               >
+                  <img
+                     id="logo1"
+                     src="image/flipkart.png"
+                     alt="amazon"
+                     width="50px"
+                  />
+               </div>
+
+               <div class="grid content-center col-span-4">
+                  <select
+                     class="bg-white border-2 border-orange-300 rounded-md outline-none h-7 px-2 w-full"
+                     name="Product"
+                     id="productList1"
+                  >
+                     <option value="volvo">volvo</option>
+
+                     <option value="saab">saab</option>
+                     <option value="mercedes">mercedes</option>
+                  </select>
+               </div>
+               <div
+                  class="grid font-semibold content-center col-span-2 bg-orange-100"
+               >
+                  <p
+                     class="bg-gradient-to-r from-orange-400 to-red-600 bg-clip-text text-transparent truncate text-2xl"
+                     id="productPrice1"
+                  >
+                     150000
+                  </p>
+               </div>
+               <div class="grid justify-center col-span-2">
+                  <button
+                     class="bg-orange-400 text-white px-2 py-1 text-base font-semibold rounded-sm hover:bg-orange-500 active:bg-red-500"
+                  >
+                     <a href="#" target="_blank" id="button1">Visit Store</a>
+                  </button>
+               </div>
             </div>
 
             <div class="grid grid-cols-9 bg-orange-100 rounded-lg gap-x-3 p-3">
-                <div class="grid justify-center content-center bg-orange-100 rounded-md"><img src="image/croma.png" alt="amazon" width="25px"></div>
-                
-                <div class="grid content-center col-span-4">
-                    <select class="bg-white border-2 border-orange-300 rounded-md outline-none h-7 px-2" name="Product" id="productList2">
-                        <option value="volvo">volvo</option>
-                        <option value="saab">saab</option>
-                        <option value="mercedes">mercedes</option>
-                    </select>
-                </div>
-                <div class="grid text-2xl sm:text-3xl truncate font-semibold content-center col-span-2 bg-orange-100 rounded-md"><p class="bg-gradient-to-r from-orange-300 to-red-600 bg-clip-text text-transparent" id="productPrice2">150000</p></div>
-                <div class="grid justify-center col-span-2"><button class="bg-orange-400 text-white px-2 py-1 text-base font-semibold rounded-sm hover:bg-orange-500 active:bg-red-500"><a href="#">Visit Store</a></button></div>
+               <div
+                  class="grid justify-center content-center bg-orange-100 rounded-md"
+               >
+                  <img
+                     id="logo2"
+                     src="image/croma.png"
+                     alt="amazon"
+                     width="25px"
+                  />
+               </div>
+
+               <div class="grid content-center col-span-4">
+                  <select
+                     class="bg-white border-2 border-orange-300 rounded-md outline-none h-7 px-2 w-full"
+                     name="Product"
+                     id="productList2"
+                  >
+                     <option value="volvo">volvo</option>
+                     <option value="saab">saab</option>
+                     <option value="mercedes">mercedes</option>
+                  </select>
+               </div>
+               <div
+                  class="grid truncate font-semibold content-center col-span-2 bg-orange-100"
+               >
+                  <p
+                     class="bg-gradient-to-r from-orange-300 to-red-600 bg-clip-text text-transparent truncate text-2xl"
+                     id="productPrice2"
+                  >
+                     150000
+                  </p>
+               </div>
+               <div class="grid justify-center col-span-2">
+                  <button
+                     class="bg-orange-400 text-white px-2 py-1 text-base font-semibold rounded-sm hover:bg-orange-500 active:bg-red-500"
+                  >
+                     <a href="#" target="_blank" id="button2">Visit Store</a>
+                  </button>
+               </div>
             </div>
 
             <div class="grid grid-cols-9 bg-orange-100 rounded-lg gap-x-3 p-3">
-                <div class="grid justify-center content-center bg-orange-100 rounded-md"><img src="image/reliance.png" alt="amazon" width="50px"></div>
-                
-                <div class="grid content-center col-span-4">
-                    <select class="bg-white border-2 border-orange-300 rounded-md outline-none h-7 px-2" name="Product" id="productList3">
-                        <option value="volvo">volvo</option>
-                        <option value="saab">saab</option>
-                        <option value="mercedes">mercedes</option>
-                    </select>
-                </div>
-                <div class="grid text-2xl sm:text-3xl truncate font-semibold content-center col-span-2 bg-orange-100 rounded-md"><p class="bg-gradient-to-r from-orange-300 to-red-600 bg-clip-text text-transparent" id="productPrice3">150000</p></div>
-                <div class="grid justify-center col-span-2"><button class="bg-orange-400 text-white px-2 py-1 text-base font-semibold rounded-sm hover:bg-orange-500 active:bg-red-500"><a href="#">Visit Store</a></button></div>
+               <div
+                  class="grid justify-center content-center bg-orange-100 rounded-md"
+               >
+                  <img
+                     id="logo3"
+                     src="image/reliance.png"
+                     alt="amazon"
+                     width="50px"
+                  />
+               </div>
+
+               <div class="grid content-center col-span-4">
+                  <select
+                     class="bg-white border-2 border-orange-300 rounded-md outline-none h-7 px-2 w-full"
+                     name="Product"
+                     id="productList3"
+                  >
+                     <option value="volvo">volvo</option>
+                     <option value="saab">saab</option>
+                     <option value="mercedes">mercedes</option>
+                  </select>
+               </div>
+               <div
+                  class="grid truncate font-semibold content-center col-span-2 bg-orange-100"
+               >
+                  <p
+                     class="bg-gradient-to-r from-orange-300 to-red-600 bg-clip-text text-transparent truncate text-2xl"
+                     id="productPrice3"
+                  >
+                     150000
+                  </p>
+               </div>
+               <div class="grid justify-center col-span-2">
+                  <button
+                     class="bg-orange-400 text-white px-2 py-1 text-base font-semibold rounded-sm hover:bg-orange-500 active:bg-red-500"
+                  >
+                     <a href="#" target="_blank" id="button3">Visit Store</a>
+                  </button>
+               </div>
             </div>
-        </div>
-    </div>
-    <script src="index.js"></script>
-</body>
+         </div>
+      </div>
+      <script src="index.js"></script>
+   </body>
 </html>
