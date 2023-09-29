@@ -4,7 +4,7 @@
    "name": "Price Comparison",
    "action": {
       "default_popup": "./index.html",
-      "default_icon": "./image/icon.png"
+      "default_icon": "./image/icon1.png"
    },
    "permissions": ["tabs"],
    "content_security_policy": {
