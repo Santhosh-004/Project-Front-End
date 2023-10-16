@@ -1,239 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Document</title>
-      <link rel="stylesheet" href="output.css" />
-   </head>
-   <body
-      class="border-2 border-red-500 mx-5 text-center p-3 m-3 rounded-md"
-      style="width: 500px"
-   >
-      <div
-         id="loading"
-         style="display: flex; height: 450px"
-         class="justify-center flex-col"
-      >
-         <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            style="
-               margin: auto;
-               background: none;
-               display: block;
-               shape-rendering: auto;
-               animation-play-state: running;
-               animation-delay: 0s;
-            "
-            width="200px"
-            height="200px"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="xMidYMid"
-         >
-            <g
-               transform="translate(50,50)"
-               style="animation-play-state: running; animation-delay: 0s"
-            >
-               <g
-                  transform="scale(0.7)"
-                  style="animation-play-state: running; animation-delay: 0s"
-               >
-                  <circle
-                     cx="0"
-                     cy="0"
-                     r="50"
-                     fill="#ffffff"
-                     style="animation-play-state: running; animation-delay: 0s"
-                  ></circle>
-                  <circle
-                     cx="0"
-                     cy="-28"
-                     r="15"
-                     fill="#df1317"
-                     style="animation-play-state: running; animation-delay: 0s"
-                  >
-                     <animateTransform
-                        attributeName="transform"
-                        type="rotate"
-                        dur="1s"
-                        repeatCount="indefinite"
-                        keyTimes="0;1"
-                        values="0 0 0;360 0 0"
-                        style="
-                           animation-play-state: running;
-                           animation-delay: 0s;
-                        "
-                     ></animateTransform>
-                  </circle>
-               </g>
-            </g>
-         </svg>
-         <p>Loading...</p>
-      </div>
-      <div id="body" class="mx-auto" style="display: none">
-         <div class="flex flex-row justify-between">
-            <div class="w-40 h-40 overflow-hidden">
-               <img
-                  class="rounded-lg border-2 border-orange-200 object-contain w-full h-full"
-                  src="https://picsum.photos/200"
-                  alt="random image"
-                  id="productImage"
-               />
-            </div>
-            <div
-               class="flex rounded-md bg-orange-50 w-72 p-3 justify-around h-40 flex-col"
-            >
-               <div class="flex h-24 items-center">
-                  <p
-                     class="text-xl text-ellipsis overflow-hidden line-clamp-3 font-normal"
-                     id="productName"
-                  >
-                     Product Name 1 asdflkjasdf asdjlfkadsk sdflkj hjaksdfhkja
-                     fdhkajs dhf asdjlfakl adsf jlkas df lkj sf
-                  </p>
-               </div>
-               <div>
-                  <p
-                     id="productPrice"
-                     class="text-4xl font-bold bg-gradient-to-r from-orange-400 to-red-600 bg-clip-text text-transparent"
-                  >
-                     150000
-                  </p>
-               </div>
-            </div>
-         </div>
-         <div
-            class="grid grid-rows-3 grid-flow-col mt-5 gap-y-3 bg-orange-50 rounded-md p-3"
-         >
-            <div class="grid grid-cols-9 bg-orange-100 rounded-lg gap-x-3 p-3">
-               <div
-                  class="grid justify-center content-center bg-orange-100 rounded-md"
-               >
-                  <img
-                     id="logo1"
-                     src="image/flipkart.png"
-                     alt="amazon"
-                     width="50px"
-                  />
-               </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="output.css" />
+	</head>
+	<body
+		class="border-2 border-red-500 mx-5 text-center p-3 m-3 rounded-md"
+		style="width: 500px"
+	>
+		<div
+			id="loading"
+			style="display: flex; height: 450px"
+			class="justify-center flex-col"
+		>
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				xmlns:xlink="http://www.w3.org/1999/xlink"
+				style="
+					margin: auto;
+					background: none;
+					display: block;
+					shape-rendering: auto;
+					animation-play-state: running;
+					animation-delay: 0s;
+				"
+				width="200px"
+				height="200px"
+				viewBox="0 0 100 100"
+				preserveAspectRatio="xMidYMid"
+			>
+				<g
+					transform="translate(50,50)"
+					style="animation-play-state: running; animation-delay: 0s"
+				>
+					<g
+						transform="scale(0.7)"
+						style="animation-play-state: running; animation-delay: 0s"
+					>
+						<circle
+							cx="0"
+							cy="0"
+							r="50"
+							fill="#ffffff"
+							style="animation-play-state: running; animation-delay: 0s"
+						></circle>
+						<circle
+							cx="0"
+							cy="-28"
+							r="15"
+							fill="#df1317"
+							style="animation-play-state: running; animation-delay: 0s"
+						>
+							<animateTransform
+								attributeName="transform"
+								type="rotate"
+								dur="1s"
+								repeatCount="indefinite"
+								keyTimes="0;1"
+								values="0 0 0;360 0 0"
+								style="
+									animation-play-state: running;
+									animation-delay: 0s;
+								"
+							></animateTransform>
+						</circle>
+					</g>
+				</g>
+			</svg>
+			<p>Loading...</p>
+		</div>
+		<div id="body" class="mx-auto" style="display: none">
+			<div class="flex flex-row justify-between">
+				<div class="w-40 h-40 overflow-hidden">
+					<img
+						class="rounded-lg border-2 border-orange-200 object-contain w-full h-full"
+						src="https://picsum.photos/200"
+						alt="random image"
+						id="productImage"
+					/>
+				</div>
+				<div
+					class="flex rounded-md bg-orange-50 w-72 p-3 justify-around h-40 flex-col"
+				>
+					<div class="flex h-24 items-center">
+						<p
+							class="text-xl text-ellipsis overflow-hidden line-clamp-3 font-normal text-center"
+							id="productName"
+						>
+							Product Name 1
+						</p>
+					</div>
+					<div>
+						<p
+							id="productPrice"
+							class="text-4xl font-bold bg-gradient-to-r from-orange-400 to-red-600 bg-clip-text text-transparent"
+						>
+							150000
+						</p>
+					</div>
+				</div>
+			</div>
+			<div
+				class="grid grid-rows-3 grid-flow-col mt-5 gap-y-3 bg-orange-50 rounded-md p-3"
+			>
+				<div class="grid grid-cols-9 bg-orange-100 rounded-lg gap-x-3 p-3">
+					<div
+						class="grid justify-center content-center bg-orange-100 rounded-md"
+					>
+						<img id="logo1" src="image/flipkart.png" alt="amazon" />
+					</div>
 
-               <div class="grid content-center col-span-4">
-                  <select
-                     class="bg-white border-2 border-orange-300 rounded-md outline-none h-7 px-2 w-full"
-                     name="Product"
-                     id="productList1"
-                  >
-                     <option value="volvo">volvo</option>
+					<div class="grid content-center col-span-4">
+						<select
+							class="bg-white border-2 border-orange-300 rounded-md outline-none h-7 px-2 w-full"
+							name="Product"
+							id="productList1"
+						>
+							<option value="volvo">volvo</option>
 
-                     <option value="saab">saab</option>
-                     <option value="mercedes">mercedes</option>
-                  </select>
-               </div>
-               <div
-                  class="grid font-semibold content-center col-span-2 bg-orange-100"
-               >
-                  <p
-                     class="bg-gradient-to-r from-orange-400 to-red-600 bg-clip-text text-transparent truncate text-2xl"
-                     id="productPrice1"
-                  >
-                     150000
-                  </p>
-               </div>
-               <div class="grid justify-center col-span-2">
-                  <button
-                     class="bg-orange-400 text-white px-2 py-1 text-base font-semibold rounded-sm hover:bg-orange-500 active:bg-red-500"
-                  >
-                     <a href="#" target="_blank" id="button1">Visit Store</a>
-                  </button>
-               </div>
-            </div>
+							<option value="saab">saab</option>
+							<option value="mercedes">mercedes</option>
+						</select>
+					</div>
+					<div
+						class="grid font-semibold content-center col-span-2 bg-orange-100"
+					>
+						<p
+							class="bg-gradient-to-r from-orange-400 to-red-600 bg-clip-text text-transparent truncate text-2xl"
+							id="productPrice1"
+						>
+							150000
+						</p>
+					</div>
+					<div class="grid justify-center col-span-2">
+						<button
+							class="bg-orange-400 text-white px-2 py-1 text-base font-semibold rounded-sm hover:bg-orange-500 active:bg-red-500"
+						>
+							<a href="#" target="_blank" id="button1">Visit Store</a>
+						</button>
+					</div>
+				</div>
 
-            <div class="grid grid-cols-9 bg-orange-100 rounded-lg gap-x-3 p-3">
-               <div
-                  class="grid justify-center content-center bg-orange-100 rounded-md"
-               >
-                  <img
-                     id="logo2"
-                     src="image/croma.png"
-                     alt="amazon"
-                     width="25px"
-                  />
-               </div>
+				<div class="grid grid-cols-9 bg-orange-100 rounded-lg gap-x-3 p-3">
+					<div
+						class="grid justify-center content-center bg-orange-100 rounded-md"
+					>
+						<img id="logo2" src="image/croma.png" alt="amazon" />
+					</div>
 
-               <div class="grid content-center col-span-4">
-                  <select
-                     class="bg-white border-2 border-orange-300 rounded-md outline-none h-7 px-2 w-full"
-                     name="Product"
-                     id="productList2"
-                  >
-                     <option value="volvo">volvo</option>
-                     <option value="saab">saab</option>
-                     <option value="mercedes">mercedes</option>
-                  </select>
-               </div>
-               <div
-                  class="grid truncate font-semibold content-center col-span-2 bg-orange-100"
-               >
-                  <p
-                     class="bg-gradient-to-r from-orange-300 to-red-600 bg-clip-text text-transparent truncate text-2xl"
-                     id="productPrice2"
-                  >
-                     150000
-                  </p>
-               </div>
-               <div class="grid justify-center col-span-2">
-                  <button
-                     class="bg-orange-400 text-white px-2 py-1 text-base font-semibold rounded-sm hover:bg-orange-500 active:bg-red-500"
-                  >
-                     <a href="#" target="_blank" id="button2">Visit Store</a>
-                  </button>
-               </div>
-            </div>
+					<div class="grid content-center col-span-4">
+						<select
+							class="bg-white border-2 border-orange-300 rounded-md outline-none h-7 px-2 w-full"
+							name="Product"
+							id="productList2"
+						>
+							<option value="volvo">volvo</option>
+							<option value="saab">saab</option>
+							<option value="mercedes">mercedes</option>
+						</select>
+					</div>
+					<div
+						class="grid truncate font-semibold content-center col-span-2 bg-orange-100"
+					>
+						<p
+							class="bg-gradient-to-r from-orange-300 to-red-600 bg-clip-text text-transparent truncate text-2xl"
+							id="productPrice2"
+						>
+							150000
+						</p>
+					</div>
+					<div class="grid justify-center col-span-2">
+						<button
+							class="bg-orange-400 text-white px-2 py-1 text-base font-semibold rounded-sm hover:bg-orange-500 active:bg-red-500"
+						>
+							<a href="#" target="_blank" id="button2">Visit Store</a>
+						</button>
+					</div>
+				</div>
 
-            <div class="grid grid-cols-9 bg-orange-100 rounded-lg gap-x-3 p-3">
-               <div
-                  class="grid justify-center content-center bg-orange-100 rounded-md"
-               >
-                  <img
-                     id="logo3"
-                     src="image/reliance.png"
-                     alt="amazon"
-                     width="50px"
-                  />
-               </div>
+				<div class="grid grid-cols-9 bg-orange-100 rounded-lg gap-x-3 p-3">
+					<div
+						class="grid justify-center content-center bg-orange-100 rounded-md"
+					>
+						<img id="logo3" src="image/reliance.png" alt="amazon" />
+					</div>
 
-               <div class="grid content-center col-span-4">
-                  <select
-                     class="bg-white border-2 border-orange-300 rounded-md outline-none h-7 px-2 w-full"
-                     name="Product"
-                     id="productList3"
-                  >
-                     <option value="volvo">volvo</option>
-                     <option value="saab">saab</option>
-                     <option value="mercedes">mercedes</option>
-                  </select>
-               </div>
-               <div
-                  class="grid truncate font-semibold content-center col-span-2 bg-orange-100"
-               >
-                  <p
-                     class="bg-gradient-to-r from-orange-300 to-red-600 bg-clip-text text-transparent truncate text-2xl"
-                     id="productPrice3"
-                  >
-                     150000
-                  </p>
-               </div>
-               <div class="grid justify-center col-span-2">
-                  <button
-                     class="bg-orange-400 text-white px-2 py-1 text-base font-semibold rounded-sm hover:bg-orange-500 active:bg-red-500"
-                  >
-                     <a href="#" target="_blank" id="button3">Visit Store</a>
-                  </button>
-               </div>
-            </div>
-         </div>
-      </div>
-      <script src="index.js"></script>
-   </body>
+					<div class="grid content-center col-span-4">
+						<select
+							class="bg-white border-2 border-orange-300 rounded-md outline-none h-7 px-2 w-full"
+							name="Product"
+							id="productList3"
+						>
+							<option value="volvo">volvo</option>
+							<option value="saab">saab</option>
+							<option value="mercedes">mercedes</option>
+						</select>
+					</div>
+					<div
+						class="grid truncate font-semibold content-center col-span-2 bg-orange-100"
+					>
+						<p
+							class="bg-gradient-to-r from-orange-300 to-red-600 bg-clip-text text-transparent truncate text-2xl"
+							id="productPrice3"
+						>
+							150000
+						</p>
+					</div>
+					<div class="grid justify-center col-span-2">
+						<button
+							class="bg-orange-400 text-white px-2 py-1 text-base font-semibold rounded-sm hover:bg-orange-500 active:bg-red-500"
+						>
+							<a href="#" target="_blank" id="button3">Visit Store</a>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="index.js"></script>
+	</body>
 </html>
