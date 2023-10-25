@@ -9,6 +9,28 @@ async function getTabUrl() {
 	});
 }
 
+function sortArrays(stringsArray, numbersArray) {
+	if (
+		Array.isArray(stringsArray) &&
+		Array.isArray(numbersArray) &&
+		stringsArray.length === numbersArray.length
+	) {
+		const combinedArray = stringsArray.map((str, index) => ({
+			str,
+			num: numbersArray[index],
+		}));
+		combinedArray.sort((a, b) => a.num - b.num);
+		stringsArray.length = 0;
+		numbersArray.length = 0;
+		combinedArray.forEach((item) => {
+			stringsArray.push(item.str);
+			numbersArray.push(item.num);
+		});
+	} else {
+		return "Both inputs should be arrays of the same length.";
+	}
+}
+
 async function main() {
 	await getTabUrl();
 	//console.log(cUrl);
@@ -16,6 +38,7 @@ async function main() {
 	let response = await fetch(`http://localhost:5000/data?site=${cUrl}`);
 	response = await response.json();
 	console.log(response);
+	console.log(response.url3);
 
 	document.querySelector("#productName").textContent = response.bkprod;
 	document.querySelector("#productPrice").textContent = "₹ " + response.cprice;
@@ -30,8 +53,9 @@ async function main() {
 
 	if (response.prodn1 != null) {
 		let first = count;
-		let fprod = -1;
 		let fcount = 0;
+		let fprice = [];
+		let product1 = [];
 		response.prodn1.forEach((element, index) => {
 			if (
 				response.price1[index] >= response.cprice * 0.8 &&
@@ -39,23 +63,26 @@ async function main() {
 				fcount < 5 &&
 				element.split(" ")[0].toLowerCase() == response.brand.toLowerCase()
 			) {
-				if (fprod == -1) {
-					fprod = index;
-				}
-				document.querySelector(`#productList${first}`).innerHTML +=
-					'<option value="' +
-					fcount +
-					'" class="truncate">' +
-					element +
-					"</option>";
+				fprice.push(response.price1[index]);
+				product1.push(element);
+
 				fcount += 1;
 				//console.log(element.split(" ")[0], response.brand);
 			}
 		});
 
+		sortArrays(product1, fprice);
+		product1.forEach((element, index) => {
+			document.querySelector(`#productList${first}`).innerHTML +=
+				'<option value="' +
+				index +
+				'" class="truncate">' +
+				element +
+				"</option>";
+		});
+
 		document.querySelector(`#logo${first}`).src = "./image/flipkart.png";
-		document.querySelector(`#productPrice${first}`).textContent =
-			response.price1[fprod];
+		document.querySelector(`#productPrice${first}`).textContent = fprice[0];
 		//console.log(fprod, response.price1[fprod]);
 		document.querySelector(`#button${first}`).href = response.url1;
 		//document.querySelector(`#button${first}`).innerHTML = "url provided";
@@ -65,19 +92,19 @@ async function main() {
 			.addEventListener("change", function () {
 				if (this.value == "0") {
 					document.querySelector(`#productPrice${first}`).textContent =
-						response.price1[0];
+						fprice[0];
 				} else if (this.value == "1") {
 					document.querySelector(`#productPrice${first}`).textContent =
-						response.price1[1];
+						fprice[1];
 				} else if (this.value == "2") {
 					document.querySelector(`#productPrice${first}`).textContent =
-						response.price1[2];
+						fprice[2];
 				} else if (this.value == "3") {
 					document.querySelector(`#productPrice${first}`).textContent =
-						response.price1[3];
+						fprice[3];
 				} else if (this.value == "4") {
 					document.querySelector(`#productPrice${first}`).textContent =
-						response.price1[4];
+						fprice[4];
 				}
 			});
 
@@ -88,7 +115,7 @@ async function main() {
 		let scount = 0,
 			sprice = [];
 		let second = count,
-			sprod = -1;
+			product2 = [];
 		response.prodn2.forEach((element, index) => {
 			if (
 				response.price2[index] >= response.cprice * 0.8 &&
@@ -99,22 +126,26 @@ async function main() {
 					element.split(" ")[1].toLowerCase() ==
 						response.brand.toLowerCase())
 			) {
-				if (sprod == -1) {
-					sprod = index;
-				}
-				document.querySelector(`#productList${second}`).innerHTML +=
-					'<option value="' +
-					scount +
-					'" class="truncate">' +
-					element +
-					"</option>";
+
 				sprice.push(response.price2[index]);
+				product2.push(element);
 				scount += 1;
 			}
 		});
+
+		sortArrays(product2, sprice);
+		product2.forEach((element, index) => {
+			document.querySelector(`#productList${second}`).innerHTML +=
+				'<option value="' +
+				index +
+				'" class="truncate">' +
+				element +
+				"</option>";
+		});
+
 		document.querySelector(`#logo${second}`).src = "./image/amazon.png";
 		document.querySelector(`#productPrice${second}`).textContent =
-			response.price2[sprod];
+			sprice[0];
 		document.querySelector(`#button${second}`).href = response.url2;
 		//document.querySelector(`#button${second}`).innerHTML = "url provided";
 		console.log("URL placed in amazon");
@@ -143,10 +174,9 @@ async function main() {
 
 	if (response.prodn3 != null) {
 		let tcount = 0,
-			tprice = [],
-			ccount = 0;
+			tprice = [];
 		let third = count,
-			tprod = -1;
+			product3 = [];
 
 		response.prodn3.forEach((element, index) => {
 			if (
@@ -155,26 +185,27 @@ async function main() {
 				tcount < 5 &&
 				element.split(" ")[0].toLowerCase() == response.brand.toLowerCase()
 			) {
-				if (tprod == -1) {
-					tprod = index;
-				}
-				document.querySelector(`#productList${third}`).innerHTML +=
-					'<option value="' +
-					tcount +
-					'" class="truncate">' +
-					element +
-					"</option>";
+				
 				tcount += 1;
 				tprice.push(response.price3[index]);
+				product3.push(element);
 			}
 		});
+
+		sortArrays(product3, tprice);
+		product3.forEach((element, index) => {
+			document.querySelector(`#productList${third}`).innerHTML +=
+				'<option value="' +
+				index +
+				'" class="truncate">' +
+				element +
+				"</option>";
+		});
+
 		document.querySelector(`#logo${third}`).src = "./image/croma.png";
 		document.querySelector(`#productPrice${third}`).textContent =
-			response.price3[tprod];
-		let newurl = response.bkprod.replace(" ", "%20");
-		document.querySelector(
-			`#button${third}`
-		).href = `https://www.croma.com/searchB?q=${newurl}%3Arelevance&text=${newurl}`;
+			tprice[0];
+		document.querySelector(`#button${third}`).href = response.url3;
 		//document.querySelector(`#button${third}`).innerHTML = "url provided";
 		console.log("URL placed in croma");
 		document
@@ -204,7 +235,7 @@ async function main() {
 		let forth = count,
 			rprice = [],
 			rcount = 0,
-			foprod = -1;
+			product4 = [];
 		response.prodn4.forEach((element, index) => {
 			if (
 				response.price4[index] >= response.cprice * 0.8 &&
@@ -212,22 +243,25 @@ async function main() {
 				rcount < 5 &&
 				element.split(" ")[0].toLowerCase() == response.brand.toLowerCase()
 			) {
-				if (foprod == -1) {
-					foprod = index;
-				}
-				document.querySelector(`#productList${forth}`).innerHTML +=
-					'<option value="' +
-					rcount +
-					'" class="truncate">' +
-					element +
-					"</option>";
 				rcount += 1;
 				rprice.push(response.price4[index]);
+				product4.push(element);
 			}
 		});
+
+		sortArrays(product4, rprice);
+		product4.forEach((element, index) => {
+			document.querySelector(`#productList${forth}`).innerHTML +=
+				'<option value="' +
+				index +
+				'" class="truncate">' +
+				element +
+				"</option>";
+		})
+
 		document.querySelector(`#logo${forth}`).src = "./image/reliance.png";
 		document.querySelector(`#productPrice${forth}`).textContent =
-			response.price4[foprod];
+			rprice[0];
 		document.querySelector(`#button${forth}`).href = response.url4;
 		//document.querySelector(`#button${forth}`).innerHTML = "url provided";
 		console.log("URL placed in reliance");
